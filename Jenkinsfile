@@ -16,7 +16,7 @@ pipeline
                   {
                      sh 'docker exec app python manage.py test'
                      sh 'sleep 4'
-                     sh '10.208.0.2:8000'
+                     sh '127.0.0.1:8000'
                      sh 'status=$?'
                      echo '$status'
                   }
@@ -32,10 +32,7 @@ pipeline
 }
   post {
      success {
-         sh 'version=$(git log -n 1 --format="%s" HEAD)'
-         sh 'echo $(git log -n 1 --format="%s" HEAD)'
-         sh 'chmod +x deploy.sh'
-         sh './deploy.sh $(git log -n 1 --format="%s" HEAD)'
+         echo 'The Pipeline success :)'
          sh 'rm -rf *'
 }
      failure {
