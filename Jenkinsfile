@@ -33,11 +33,9 @@ pipeline
   post {
      success {
          echo 'The Pipeline success :)'
-         sh 'rm -rf *'
 }
      failure {
          echo 'The Pipeline failed :('
-         sh 'rm -rf *'
 }
      always {
          sh 'echo build ended, deleting all resources...'
