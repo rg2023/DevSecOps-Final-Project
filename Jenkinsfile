@@ -14,7 +14,7 @@ pipeline
              {
                     steps 
                   {
-                     sh 'docker exec app python manage.py test'
+                     sh 'docker exec devconnect python manage.py test'
                      sh 'sleep 4'
                      sh '127.0.0.1:8000'
                      sh 'status=$?'
