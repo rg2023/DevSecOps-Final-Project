@@ -7,7 +7,7 @@ pipeline
                   steps 
                   {
                      sh 'chmod +x init.sh'
-                     sh './init.sh&#39'
+                     sh './init.sh'
                   }
              }
              stage('Test') 
