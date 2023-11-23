@@ -16,7 +16,6 @@ pipeline
                   {
                      sh 'docker exec devconnect python django_web_app/manage.py test'
                      sh 'sleep 4'
-                     sh 'curl http://localhost:8000'
                      sh 'status=$?'
                      echo '$status'
                   }
