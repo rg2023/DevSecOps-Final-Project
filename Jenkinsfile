@@ -17,7 +17,6 @@ pipeline
                      sh 'docker exec devconnect python django_web_app/manage.py test'
                      sh 'sleep 4'
                      sh 'docker exec devconnect python django_web_app/manage.py runserver 0.0.0.0:8000 &'
-                     sh 'sleep 10'
                      sh 'status=$?'
                      echo '$status'
                   }
@@ -40,8 +39,6 @@ pipeline
 }
      always {
          sh 'echo build ended, deleting all resources...'
-         sh 'chmod +x ./delete.sh'
-         sh './delete.sh'
 }
 }
 }
