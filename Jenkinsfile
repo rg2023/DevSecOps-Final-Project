@@ -39,6 +39,9 @@ pipeline
 }
      always {
          sh 'echo build ended, deleting all resources...'
+         sh 'chmod +x ./delete.sh'
+         sh './delete.sh'
+         sh 'rm -rf *'
 }
 }
 }
